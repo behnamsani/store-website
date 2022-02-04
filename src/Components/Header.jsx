@@ -11,7 +11,7 @@ class Header extends Component {
                 <div id={styles.topHeader}>
                     <span id={styles.logo}>
                         <img src={logo} alt="logo" />
-                        <span> Store Website</span>
+                        <p> Store Website</p>
                     </span>
                     <span id={styles.menu}>
                         <ul>
