@@ -14,6 +14,7 @@
     justify-content: space-around;
     align-items: center;
     border-bottom: solid 1px #a0a0a0;
+    background: #eee;
 }
 #logo{
     display: flex;
@@ -34,7 +35,8 @@
     height: 30px;
 }
 #menu{
-    width: 100% !important;
+    width: 80% !important;
+
 }
 #menu ul {
     display: flex;
@@ -43,27 +45,64 @@
 }
 #menu ul li{
     list-style: none;
-    margin: 0 20px;
+    width: 100px;
+    height: 60px;
+    line-height: 60px;
     cursor: pointer;
+    text-align: center;
 }
-#language{
-    width: 75px !important;
-    height: 30px !important;
+#search{
+    margin: 0!important;
+    height: 60px !important;
+    background: #fff;
+    padding: 0;
     position: relative;
+    background: #eee;
+    transition: all 500ms;
 }
-#lanSelect {
-    cursor: pointer;
-    position: relative;
-    z-index: 5;
-    background: none;
+#search:hover{
+    background: rgb(244, 209, 255);
+}
+#search input:hover{
+    width: 180px;
+    margin-left: 8px;
+    
+}
+#search input{
+    transition: all 500ms;
+    height: inherit;
     border: none;
+    outline: none;
+    background: rgb(255, 255, 255);
+    padding-left: 25px;
+    width: 80px;
+    background: none;
+    margin-left: 2px;
+}
+#search i{
+    display: block;
+    width: 32px;
+    height: 32px;
+    background: url('../images/searchB.png') no-repeat ;
+    background-size: 32px 32px;
+    position: absolute;left: 0;
+    top: 0;bottom: 0;margin: auto;
 }
 #connectUs{
     border-left:solid 1px #a0a0a0;
     height: 50px !important;
     line-height: 50px;
     padding: 0 10px;
+    width: 200px !important;
+    display: block;
 }
+#language{
+    width: 75px !important;
+    height: 30px !important;
+    position: relative;
+    margin-left: 0!important;
+}
+
 #language img{
     width: 25px;
     height: 15px;
@@ -73,6 +112,15 @@
     top: 8px;
     z-index: 0;
     cursor: pointer;
+}
+
+#lanSelect {
+    cursor: pointer;
+    position: relative;
+    z-index: 5;
+    background: none;
+    border: none;
+    outline: none;
 }
 .hide{
     display: none;

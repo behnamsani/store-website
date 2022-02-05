@@ -22,6 +22,10 @@ class Header extends Component {
                             <li>option</li>
                         </ul>
                     </span>
+                    <span id={styles.search}>
+                        <i></i>
+                        <input type="text" placeholder='Search...'/>
+                    </span>
                     <span id={styles.connectUs}>
                         021-85700000
                     </span>
