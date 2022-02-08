@@ -6,6 +6,8 @@ import irFlag from '../images/iran.png';
 class Header extends Component {
     state = { 
         searchOk:false,
+        searchVal:"",
+        languageVal:"En",
      } 
     render() { 
         return (
@@ -31,15 +33,14 @@ class Header extends Component {
                         021-85700000
                     </span>
                     <span id={styles.language}>
-                        <img src={enFlag} alt="En" />
-                        <img className={styles.hide} src={irFlag} alt="Fa" />
-                        <select id={styles.lanSelect}>
+                        <img src={this.state.languageVal==="En" ? enFlag : irFlag} alt="Fa" />
+                        <select onChange={this.languageOption} value={this.state.languageVal} id={styles.lanSelect}>
                             <option value="En">En</option>
                             <option value="Fa">Fa</option>
                         </select>
                     </span>    
                 </div>
-                <input  className={this.state.searchOk ? styles.searchOpen : styles.searchClose } type="text" placeholder='Search...'/>
+                <input onChange={this.searchValue} value={this.state.searchVal} className={this.state.searchOk ? styles.searchOpen : styles.searchClose } type="text" placeholder='Search...'/>
             </div>
         );
     }
@@ -47,6 +48,16 @@ class Header extends Component {
         this.setState({
             searchOk : !this.state.searchOk,
         })
+    }
+    searchValue = (event) =>{
+        this.setState({
+            searchVal: event.target.value,
+        })
+    }
+    languageOption =  (event) => {
+        this.setState({
+            languageVal:event.target.value,
+        });
     }
 }
  
