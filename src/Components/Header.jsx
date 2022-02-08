@@ -4,7 +4,9 @@ import logo from '../images/logo.png';
 import enFlag from '../images/england.png';
 import irFlag from '../images/iran.png';
 class Header extends Component {
-    state = {  } 
+    state = { 
+        searchOk:false,
+     } 
     render() { 
         return (
             <div id={styles.header}>
@@ -22,9 +24,8 @@ class Header extends Component {
                             <li>option</li>
                         </ul>
                     </span>
-                    <span id={styles.search}>
+                    <span onClick={this.searchHandel} id={styles.search}>
                         <i></i>
-                        <input type="text" placeholder='Search...'/>
                     </span>
                     <span id={styles.connectUs}>
                         021-85700000
@@ -38,27 +39,15 @@ class Header extends Component {
                         </select>
                     </span>    
                 </div>
-                <div id={styles.bottomHeader}>
-                    <span id={styles.products}></span>
-                    <span id={styles.search}></span>
-                    <span id={styles.userInformation}>
-                        <div id={styles.card}></div>
-                        <div id={styles.Favorites}></div>
-                        <div id={styles.account}></div>
-                        <div id={styles.balance}></div>
-                    </span>
-                </div>
+                <input  className={this.state.searchOk ? styles.searchOpen : styles.searchClose } type="text" placeholder='Search...'/>
             </div>
         );
+    }
+    searchHandel = () => {
+        this.setState({
+            searchOk : !this.state.searchOk,
+        })
     }
 }
  
 export default Header;
-<>
-    <div>
-
-    </div>
-    <div>
-
-    </div>    
-</>
