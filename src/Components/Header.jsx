@@ -8,6 +8,7 @@ class Header extends Component {
         searchOk:false,
         searchVal:"",
         languageVal:"En",
+        loginWindow:false,
      } 
     render() { 
         return (
@@ -30,7 +31,11 @@ class Header extends Component {
                         <i></i>
                     </span>
                     <span id={styles.connectUs}>
-                        021-85700000
+                        <p>021-85700000</p> 
+                    </span>
+                    <span id={styles.login} onClick={this.showLogin}>
+                        <i></i>
+                        <p>login / register</p>
                     </span>
                     <span id={styles.language}>
                         <img src={this.state.languageVal==="En" ? enFlag : irFlag} alt="Fa" />
@@ -41,8 +46,21 @@ class Header extends Component {
                     </span>    
                 </div>
                 <input onChange={this.searchValue} value={this.state.searchVal} className={this.state.searchOk ? styles.searchOpen : styles.searchClose } type="text" placeholder='Search...'/>
+                <div id={styles.windowLogin} style={this.state.loginWindow ? {display:"block"} : {display:"none"}}>
+                    <p></p>
+                    <input type="text" />
+                    <input type="text" />
+                </div>
+                <div id={styles.black} style={this.state.loginWindow ? {display:"block"} : {display:"none"}}>
+
+                </div>
             </div>
         );
+    }
+    showLogin = () => {
+        this.setState({
+            loginWindow:!this.state.loginWindow,
+        })
     }
     searchHandel = () => {
         this.setState({

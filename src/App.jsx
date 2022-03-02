@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from './Components/Header';
 import Banner from './Components/Banner';
+import Footer from './Components/Footer';
 class App extends Component {
     state = {  } 
     render() { 
@@ -8,6 +9,7 @@ class App extends Component {
             <>
             <Header />
             <Banner />
+            <Footer />
             </>
             
         );
