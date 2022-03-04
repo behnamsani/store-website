@@ -46,12 +46,20 @@ class Header extends Component {
                     </span>    
                 </div>
                 <input onChange={this.searchValue} value={this.state.searchVal} className={this.state.searchOk ? styles.searchOpen : styles.searchClose } type="text" placeholder='Search...'/>
-                <div id={styles.windowLogin} style={this.state.loginWindow ? {display:"block"} : {display:"none"}}>
-                    <p></p>
-                    <input type="text" />
-                    <input type="text" />
+                <div id={styles.windowLogin} style={this.state.loginWindow ? {opacity:"1",visibility:"visible",transition:"all 600ms"} : {opacity:"0",visibility:"hidden",transition:"all 600ms"}}>
+                    <div id={styles.boxLog}>
+                        <p id={styles.titreLog}>login account</p>
+                        <span>
+                            <p className={styles.txtForme}>user name :</p>
+                            <input type="text" />
+                        </span>
+                        <span>
+                            <p className={styles.txtForme}>password :</p>
+                            <input type="text" />
+                        </span>
+                    </div>
                 </div>
-                <div id={styles.black} style={this.state.loginWindow ? {display:"block"} : {display:"none"}}>
+                <div id={styles.black} style={this.state.loginWindow ? {opacity:"1",transition:"all 500ms",visibility:"visible"} : {opacity:"0",transition:"all 500ms",visibility:"hidden"}}>
 
                 </div>
             </div>
