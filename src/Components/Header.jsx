@@ -4,12 +4,16 @@ import logo from '../images/logo.png';
 import enFlag from '../images/england.png';
 import irFlag from '../images/iran.png';
 class Header extends Component {
-    state = { 
-        searchOk:false,
-        searchVal:"",
-        languageVal:"En",
-        loginWindow:false,
-     } 
+    constructor(){
+        super()
+        this.state = { 
+            searchOk:false,
+            searchVal:"",
+            languageVal:"En",
+            loginWindow:false,
+         } 
+    }
+    
     render() { 
         return (
             <div id={styles.header}>
@@ -34,8 +38,8 @@ class Header extends Component {
                         <p>021-85700000</p> 
                     </span>
                     <span id={styles.login} onClick={this.showLogin}>
-                        <i></i>
-                        <p>login / register</p>
+                        <i className={this.state.loginWindow ? styles.selectlogin : styles.iconLogin}></i>
+                        <p className={this.state.loginWindow ? styles.selectHead : ""}>login / register</p>
                     </span>
                     <span id={styles.language}>
                         <img src={this.state.languageVal==="En" ? enFlag : irFlag} alt="Fa" />
