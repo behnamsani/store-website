@@ -156,6 +156,12 @@
     margin: 0 10px;
     cursor: pointer;
 }
+.loginOn{
+    color: blueviolet;
+}
+.loginOff{
+    color: black;
+}
 #login i{
     background: url("../images/user.png") no-repeat;
     background-size: 32px 32px;

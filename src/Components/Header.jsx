@@ -9,6 +9,8 @@ class Header extends Component {
         searchVal:"",
         languageVal:"En",
         loginWindow:false,
+        userNameVal:"",
+        passwordVal:"",
      } 
     render() { 
         return (
@@ -33,7 +35,7 @@ class Header extends Component {
                     <span id={styles.connectUs}>
                         <p>021-85700000</p> 
                     </span>
-                    <span id={styles.login} onClick={this.showLogin}>
+                    <span id={styles.login} className={this.state.loginWindow ? styles.loginOn : styles.loginOff} onClick={this.showLogin}>
                         <i></i>
                         <p>login / register</p>
                     </span>
@@ -51,11 +53,11 @@ class Header extends Component {
                         <p id={styles.titreLog}>login account</p>
                         <span>
                             <p className={styles.txtForme}>user name :</p>
-                            <input type="text" />
+                            <input onChange={this.userNameValue} value={this.state.userNameVal} placeholder='user name' type="text" />
                         </span>
                         <span>
                             <p className={styles.txtForme}>password :</p>
-                            <input type="text" />
+                            <input onChange={this.passwordValue} value={this.state.passwordVal} placeholder='password' type="password" />
                         </span>
                     </div>
                 </div>
@@ -83,6 +85,16 @@ class Header extends Component {
     languageOption =  (event) => {
         this.setState({
             languageVal:event.target.value,
+        });
+    }
+    userNameValue = (event) =>{
+        this.setState({
+            userNameVal:event.target.value
+        });
+    }
+    passwordValue =(event) =>{
+        this.setState({
+            passwordVal:event.target.value
         });
     }
 }
